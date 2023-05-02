@@ -35,6 +35,12 @@ function api_docs_schema_retrieve(payload) {
     params: { lang: payload.lang }
   })
 }
+function api_v1_employee_list(payload) {
+  return testingappAPI.get(`/api/v1/employee/`)
+}
+function api_v1_employee_create(payload) {
+  return testingappAPI.post(`/api/v1/employee/`, payload.data)
+}
 function rest_auth_login_create(payload) {
   return testingappAPI.post(`/rest-auth/login/`, payload.data)
 }
@@ -73,6 +79,18 @@ function api_v1_recipe_partial_update(payload) {
 }
 function api_v1_recipe_destroy(payload) {
   return testingappAPI.delete(`/api/v1/recipe/${payload.id}/`)
+}
+function api_v1_employee_retrieve(payload) {
+  return testingappAPI.get(`/api/v1/employee/${payload.id}/`)
+}
+function api_v1_employee_update(payload) {
+  return testingappAPI.put(`/api/v1/employee/${payload.id}/`, payload.data)
+}
+function api_v1_employee_partial_update(payload) {
+  return testingappAPI.patch(`/api/v1/employee/${payload.id}/`, payload.data)
+}
+function api_v1_employee_destroy(payload) {
+  return testingappAPI.delete(`/api/v1/employee/${payload.id}/`)
 }
 function rest_auth_registration_create(payload) {
   return testingappAPI.post(`/rest-auth/registration/`, payload.data)
@@ -115,6 +133,8 @@ export const apiService = {
   rest_auth_user_update,
   rest_auth_user_partial_update,
   api_docs_schema_retrieve,
+  api_v1_employee_list,
+  api_v1_employee_create,
   rest_auth_login_create,
   rest_auth_logout_retrieve,
   rest_auth_logout_create,
@@ -128,6 +148,10 @@ export const apiService = {
   api_v1_recipe_update,
   api_v1_recipe_partial_update,
   api_v1_recipe_destroy,
+  api_v1_employee_retrieve,
+  api_v1_employee_update,
+  api_v1_employee_partial_update,
+  api_v1_employee_destroy,
   rest_auth_registration_create,
   api_v1_attendevent_retrieve,
   api_v1_attendevent_update,
