@@ -20,3 +20,8 @@ class Event(models.Model):
     image = models.CharField(max_length=256,)
     info = models.TextField()
     datetime = models.IntegerField(null=True,blank=True,)
+class Employee(models.Model):
+    'Generated Model'
+    name = models.CharField(max_length=256,)
+    email = models.EmailField(max_length=254,)
+    address = models.TextField()
